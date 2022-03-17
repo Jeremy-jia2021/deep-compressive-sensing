@@ -13,7 +13,6 @@ from data import create_dataloader, create_dataset
 from models import create_model
 from tensorboardX import SummaryWriter
 
-
 def main():
 
     my_whole_seed = 222
