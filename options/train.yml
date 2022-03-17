@@ -1,0 +1,83 @@
+#### general settings
+name: c-net_20_1_batch20
+use_tb_logger: true
+distortion: sr
+save_images: false
+gpu_ids: [1]
+
+#### datasets
+datasets:
+  train:
+    name: DIV2K
+    mode: MAT #[IMAGE MAT]
+    dataroot_GT: ../C-net-local/data/train #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/train #./data/train #
+    dataroot_LQ: ../C-net-local/data/train #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/train #./data/train #
+
+    use_shuffle: true
+    n_workers: 3  # per GPU
+    batch_size: 20 #4
+    GT_size: 128
+    use_flip: true
+    use_rot: true
+    color: ~
+  val:
+    name: val_set
+    mode: MAT #[IMAGE MAT]
+    GT_size: 128
+    dataroot_GT: ../C-net-local/data/test # #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/test #./data/test #
+    dataroot_LQ: ../C-net-local/data/test # #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/test #./data/test #
+
+#### network structures
+network_G:
+  in_nc: 1 # should be dividable by 3 (RGB input is required for the vgg-based perceptual loss)
+  out_nc: 1
+  nf: 24 #48 if in_nc = 24
+  nb: 12
+network_D:
+  d_type: nlayer  # vgg | nlayer | wgan
+  in_nc: 1
+  nf: 64 # 64 if in_nc = 24
+
+#### path
+path:
+  #../experiments/c-net_10/models/100000_G.pth
+  #../experiments/c-net_20_1/models/42000_G.pth
+  #../experiments/c-net_20_1_batch20/models/28000_G.pth
+  pretrain_model_G: ../experiments/c-net_20_1_batch20/models/20000_G.pth
+  strict_load: True
+  resume_state: #../experiments/c-net_20/training_state/100000.state
+
+#### training settings: learning rate scheme, loss
+train:
+  lr_G: !!float 1e-4
+  weight_decay_G: 0
+  beta1_G: 0.9
+  beta2_G: 0.99
+  lr_D: !!float 1e-4
+  weight_decay_D: 0
+  beta1_D: 0.9
+  beta2_D: 0.99
+  lr_scheme: MultiStepLR
+
+  niter: 400000
+  warmup_iter: -1  # no warm up
+  lr_steps: [20000, 40000, 60000, 80000]
+  lr_gamma: 0.5
+
+  pixel_criterion: l1
+  pixel_weight: !!float 1e-2
+  feature_criterion: l1
+  feature_weight: !!float 1
+  gan_type: ragan  # gan | ragan |wgan
+  gan_weight: !!float 5e-3
+
+  D_update_ratio: 1
+  D_init_iters: 0
+
+  manual_seed: 10
+  val_freq: !!float 100
+
+#### logger
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 1000
