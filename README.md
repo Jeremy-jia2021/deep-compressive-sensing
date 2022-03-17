@@ -30,11 +30,13 @@ This repository provides the official PyTorch implementation of the following pa
 
 
 ## SPI system schematic
-<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/4.jpg">
+
+<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/4.jpg"/>
 
 
 ## Architecture
-<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/1.jpg" >
+
+<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/1.jpg"/>
 
 
 ## Code User Guide
