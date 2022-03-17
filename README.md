@@ -25,11 +25,11 @@ Single-pixel imaging (SPI) enables the use of advanced detector technologies to 
 
 
 ## SPI system schematic
-<img src="https://github.com/deep-compressive-sensing/imgs/4.tif" heigth=350>
+<img src="https://github.com/Jeremy-jia2021/deep-compressed-sensing/blob/master/imgs/4.jpg" heigth=350>
 
 
 ## Architecture
-<img src="https://github.com/deep-compressive-sensing/imgs/1.tif" heigth=350>
+<img src="https://github.com/Jeremy-jia2021/deep-compressed-sensing/blob/master/imgs/1.jpg" heigth=350>
 
 
 ## Code User Guide
