@@ -3,6 +3,7 @@ The paper is published
 This repository provides the official PyTorch implementation of the following paper:
 > **Single pixel imaging via unsupervised deep compressive sensing with collaborative sparsity in discretized feature space**<br>
 > Mengyu Jia<sup>1</sup>, Lequan Yu <sup>2</sup>, Wenxing Bai<sup>1</sup>, Pengfei Zhang<sup>1</sup>, Limin Zhang<sup>1</sup>, Wei Wang<sup>3</sup>, Feng Gao<sup>1</sup> <br/>
+>
 > <sup>1</sup> College of Precision Instrument and Optoelectronics Engineering, Tianjin University, Tianjin 300072, China <br>
 > <sup>2</sup> Department of Statistics and Actuarial Science, The University of Hong Kong, Hong Kong SAR, China <br/>
 > <sup>3</sup> Department of Radiation Oncology, Tianjin Medical University Cancer Institute and Hospital, National Clinical Research Center for Cancer, Tianjin’s Clinical Research Center for Cancer, Key Laboratory of Cancer Prevention and Therapy, Tianjin, China, 300060 <br>
@@ -29,11 +30,13 @@ This repository provides the official PyTorch implementation of the following pa
 
 
 ## SPI system schematic
-<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/4.jpg" heigth=350>
+<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/4.jpg"width="300"
+height="300">
 
 
 ## Architecture
-<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/1.jpg" heigth=350>
+<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/1.jpg" width="300"
+height="300">
 
 
 ## Code User Guide
