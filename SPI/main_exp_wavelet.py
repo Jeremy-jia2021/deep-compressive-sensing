@@ -40,8 +40,7 @@ import numpy as np
 TensorBoard_path = '../tb_logger/' + 'optimization'
 pattern_path = './patterns'
 test_img_path = './data/classic/meas_cameraman.mat'
-measurement_path = './data/experiments/1-21-2022/Hadamard/15min/data.mat' # './data/experiments/1-21-2022/DCT/91min/data.mat'
-#measurement_path = './data/experiments/1-21-2022/DCT/7min/dct_7min_10ms.mat'
+measurement_path = './data/experiments/1-21-2022/Hadamard/15min/data.mat'
 illum_pattern = 'Hadamard'
 
 GT_size = 128

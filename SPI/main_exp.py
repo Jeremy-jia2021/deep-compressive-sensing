@@ -31,8 +31,7 @@ import utils.lr_scheduler as lr_scheduler
 TensorBoard_path = '../tb_logger/' + 'optimization'
 pattern_path = './patterns'
 test_img_path = './data/classic/meas_cameraman.mat'
-measurement_path = './data/experiments/1-21-2022/DCT/7min/data.mat' #measurement_path = './data/experiments/1-17-2022/data.mat'
-# measurement_path = './data/experiments/7-1/cameraman_nose9.mat'
+measurement_path = './data/experiments/1-21-2022/DCT/7min/data.mat'
 illum_pattern = 'DCT'
 
 #### options

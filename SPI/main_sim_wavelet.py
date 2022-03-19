@@ -40,7 +40,6 @@ import numpy as np
 #%% options
 TensorBoard_path = '../tb_logger/' + 'optimization'
 pattern_path = './patterns'
-# test_img_path =  './data/classic/lena.bmp'#'./data/linnaeus/other'  #'./data/classic/lena.bmp'
 test_img_path = './data/classic/lena.bmp'
 illum_pattern = 'Hadamard'
 SNR = 25

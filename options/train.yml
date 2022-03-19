@@ -10,8 +10,8 @@ datasets:
   train:
     name: DIV2K
     mode: MAT #[IMAGE MAT]
-    dataroot_GT: ../C-net-local/data/train #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/train #./data/train #
-    dataroot_LQ: ../C-net-local/data/train #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/train #./data/train #
+    dataroot_GT: ../C-net-local/data/train
+    dataroot_LQ: ../C-net-local/data/train
 
     use_shuffle: true
     n_workers: 3  # per GPU
@@ -24,8 +24,8 @@ datasets:
     name: val_set
     mode: MAT #[IMAGE MAT]
     GT_size: 128
-    dataroot_GT: ../C-net-local/data/test # #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/test #./data/test #
-    dataroot_LQ: ../C-net-local/data/test # #/data/jia/Networks/ESRGAN/CK_ESRGAN/datasets/A/test #./data/test #
+    dataroot_GT: ../C-net-local/data/test
+    dataroot_LQ: ../C-net-local/data/test
 
 #### network structures
 network_G:

@@ -14,27 +14,6 @@ from models import create_model
 from tensorboardX import SummaryWriter
 
 def main():
-
-    my_whole_seed = 222
-    random.seed(my_whole_seed)
-    np.random.seed(my_whole_seed)
-    torch.manual_seed(my_whole_seed)
-    torch.cuda.manual_seed_all(my_whole_seed)
-    torch.cuda.manual_seed(my_whole_seed)
-    np.random.seed(my_whole_seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    os.environ['PYTHONHASHSEED'] = str(my_whole_seed)
-
-    #### random seed
-    # seed = opt['train']['manual_seed']
-    # if seed is None:
-    #     seed = random.randint(1, 10000)
-    # util.set_random_seed(seed)
-    #
-    # torch.backends.cudnn.benchmark = True
-    # # torch.backends.cudnn.deterministic = True
-
     #### options
     parser = argparse.ArgumentParser()
     parser.add_argument('-opt', type=str, help='Path to option YMAL file.')
@@ -70,6 +49,14 @@ def main():
 
     # convert to NoneDict, which returns None for missing keys
     opt = option.dict_to_nonedict(opt)
+
+    #### random seed
+    seed = opt['train']['manual_seed']
+    if seed is None:
+        seed = random.randint(1, 10000)
+    util.set_random_seed(seed)
+    torch.backends.cudnn.benchmark = True
+    torch.backends.cudnn.deterministic = True
 
     #### create train and val dataloader
     dataset_ratio = 200  # enlarge the size of each epoch
@@ -142,17 +129,12 @@ def main():
                     model.test(current_step)
 
                     visuals = model.get_current_visuals()
-                    # channel_wise images
-                    # sr_img = make_grid(visuals['SR'][0,0:4, ...].unsqueeze(1), normalize=True, nrow=2)
-                    # gt_img = make_grid(visuals['GT'][0,0:4, ...].unsqueeze(1), normalize=True, nrow=2)
                     bottleneck_fea_img = make_grid(visuals['bottleneck_fea'][0,...].unsqueeze(1), normalize=True)
                     print("Feature maps: min=%.3f, max=%.3f"%(visuals['bottleneck_fea'].min(),visuals['bottleneck_fea'].max()))
 
                     # RGB images
                     SR_cube = np.transpose(visuals['SR'].detach().squeeze(dim=0).cpu().numpy(), (1, 2, 0))
-                    #SR_RGB = spectral.get_rgb(SR_cube, bands=[23, 15, 5], stretch=(0.02, 0.98))
                     GT_cube = np.transpose(visuals['GT'].detach().squeeze(dim=0).cpu().numpy(), (1, 2, 0))
-                    #GT_RGB = spectral.get_rgb(GT_cube, bands=[23, 15, 5], stretch=(0.02, 0.98))
 
                     # tensorboard logger
                     if opt['use_tb_logger'] and 'debug' not in opt['name']:

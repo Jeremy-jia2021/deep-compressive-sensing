@@ -35,8 +35,7 @@ import time
 #%% options
 TensorBoard_path = '../tb_logger/' + 'optimization'
 pattern_path = '../../SPI_patterns'
-test_img_path = './data/classic/lena.bmp' #'./data/linnaeus/other/277_128.jpg'   #'./data/classic/lena.bmp'
-#test_img_path = './data/classic/meas_cameraman.mat'
+test_img_path = './data/classic/lena.bmp'
 illum_pattern = 'DCT'
 SNR = 30
 

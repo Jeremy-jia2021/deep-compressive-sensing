@@ -71,9 +71,6 @@ def get_pattern(basis, size):
 
         uu = uu[index]
         vv = vv[index]
-        # uu[index]=1000
-        # plt.imshow(uu, cmap='gray')
-        # plt.show()
         xv, yv = np.meshgrid(range(size), range(size), sparse=False, indexing='ij')
         SPI_mask = []
         for i in range(np.size(uu)):  # np.size(uu)
@@ -149,11 +146,11 @@ def get_pattern(basis, size):
 
 def load_measurement(measurement_path, illum_pattern, truncated_index):
     if illum_pattern == 'DCT':
-        cof = 4.e3 # TODO: DCS:5e3, Wavelet:2e3
+        cof = 4.e3
     elif illum_pattern == 'Hadamard':
-        cof = 3.e3 # TODO: DCS:5e3, Wavelet:.9e3
+        cof = 3.e3
     else:
-        cof = 10e-3 #9e-3
+        cof = 10e-3
 
     raw = []
     if os.path.isfile(measurement_path):
@@ -254,31 +251,12 @@ def load_images(test_img_path, size):
     else:
         raise ValueError(test_img_path + 'is an invalid path')
 
-    # rows, cols = test_data.shape
-    # M = cv2.getRotationMatrix2D(((cols - 1) / 2.0, (rows - 1) / 2.0), -90, 1)
-    # test_data = cv2.warpAffine(test_data, M, (cols, rows))
     if FLIP_IMAGE:
         test_data = cv2.flip(test_data, 0)
     if ROT_90:
         test_data = cv2.transpose(test_data)
-        test_data = cv2.flip(test_data, 0)
-    '''
-    test_dataa = test_data[0:158, 0:161]  #DHT/cameraman_100ms
-    test_dataa = test_data[0:158, 0:161]  #DHT/cameraman_50ms
-    test_dataa = test_data[0:158, 0:161]  #DHT/cameraman_25ms
-    test_dataa = test_data[3:161,3:161]   #DHT/ghost_100ms
-    test_dataa = test_data[2:161,3:161]   #DHT/ghost_50ms
-    test_dataa = test_data[2:161,3:161]   #DHT/ghost_25ms
-    test_dataa = test_data[0:-4, :]       #DFT/cameraman
-    test_dataa = test_data[4:161, 3:161]  #DFT/ghost
-    test_dataa = test_data[3:, :]         #DCT/cameraman
-    test_dataa = test_data[3:161,3:161]   #DCT/ghost
-    test_dataa = test_data[2:-3, 3:]      #DCT/cameraman_light
-    test_dataa = test_data                #simulation
-    '''
-    test_dataa = test_data[3:, :]         #DCT/cameraman
 
-    test_dataa = cv2.resize(np.copy(test_dataa), (size, size), interpolation=cv2.INTER_CUBIC)  # fx=0.5, fy=0.5,
+    test_dataa = cv2.resize(np.copy(test_data), (size, size), interpolation=cv2.INTER_CUBIC)
     test_dataa = test_dataa[..., np.newaxis]  # keep only one channel
     test_dataa = operation.normalize_0_to_1(test_dataa)
     test_dataa = np.transpose(test_dataa, (2, 0, 1))[np.newaxis, :, :, :]
@@ -327,7 +305,5 @@ def denorm(x):
 
 def norm(x):
     """Convert the range from [0, 1]. to [-1, 1]"""
-    # out = x*2-1
-    # return out.clamp_(0, 1)
-
-    return torch.clamp(x, 0., 1.)
+    out = x*2-1
+    return out.clamp_(0, 1)
