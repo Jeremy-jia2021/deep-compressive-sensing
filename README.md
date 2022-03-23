@@ -8,7 +8,7 @@ This repository provides the official PyTorch implementation of the following pa
 > <sup>2</sup> Department of Statistics and Actuarial Science, The University of Hong Kong, Hong Kong SAR, China <br/>
 > <sup>3</sup> Department of Radiation Oncology, Tianjin Medical University Cancer Institute and Hospital, National Clinical Research Center for Cancer, Tianjin’s Clinical Research Center for Cancer, Key Laboratory of Cancer Prevention and Therapy, Tianjin, China, 300060 <br>
 > 
-> **Abstract:**  Single-pixel imaging (SPI) enables the use of advanced detector technologies to provide a potentially low-cost solution for sensing beyond the visible spectrum and has received increasing attentions recently. However, when it comes to sub-Nyquist sampling, the spectrum truncation and spectrum discretization effects significantly challenge the traditional SPI pipeline due to the lack of sufficient sparsity. In this work, a deep compressive sensing (CS) framework is built to conduct image reconstructions in classical SPIs, where a novel compression network is proposed to enable collaborative sparsity in discretized feature space while remaining excellent coherence with the sensing basis as per CS conditions. To alleviate the underlying limitations in an end-to-end supervised training, e.g., the network typically needs to be re-trained as the basis patterns, sampling ratios, etc. change, the network is trained in an unsupervised fashion with no sensing physics involved.
+> **Abstract:**  _Single-pixel imaging (SPI) enables the use of advanced detector technologies to provide a potentially low-cost solution for sensing beyond the visible spectrum and has received increasing attentions recently. However, when it comes to sub-Nyquist sampling, the spectrum truncation and spectrum discretization effects significantly challenge the traditional SPI pipeline due to the lack of sufficient sparsity. In this work, a deep compressive sensing (CS) framework is built to conduct image reconstructions in classical SPIs, where a novel compression network is proposed to enable collaborative sparsity in discretized feature space while remaining excellent coherence with the sensing basis as per CS conditions. To alleviate the underlying limitations in an end-to-end supervised training, e.g., the network typically needs to be re-trained as the basis patterns, sampling ratios, etc. change, the network is trained in an unsupervised fashion with no sensing physics involved._
 
 ## SPI system schematic
 
@@ -53,6 +53,8 @@ python main_sim_wavelet.py -opt options/test.yml
 ## Acknowledgement
 I would like to offer a special thanks to Dr. Huijuan Zhao for being an excellent supervisor during my PhD journey. All the way through my academic life, I have been continuously inspired by her kindness, dedication, and love.
 
+## Fundings
+National Natural Science Foundation of China (62175183, 61575140, 62075156, 81871393, 81872472); The Science&Technology Development Fund of Tianjin Education Commission for Higher Education (2018KJ231).
 ## ABOUT
 Copying and distribution of this file, with or without modification,
 are permitted in any medium without royalty provided the copyright
