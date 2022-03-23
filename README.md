@@ -1,6 +1,7 @@
 # Deep Compressed Sensing Network - Official PyTorch Implementation
 
-This repository provides the official PyTorch implementation of the following paper:
+This repository provides the official PyTorch implementation of the following paper(DOI:10.1002/jbio.202200045):
+(The paper is currently in process of publication)
 > **Single pixel imaging via unsupervised deep compressive sensing with collaborative sparsity in discretized feature space**<br>
 > Mengyu Jia<sup>1</sup>, Lequan Yu <sup>2</sup>, Wenxing Bai<sup>1</sup>, Pengfei Zhang<sup>1</sup>, Limin Zhang<sup>1</sup>, Wei Wang<sup>3,+</sup>, Feng Gao<sup>1,+</sup> <br/>
 >
