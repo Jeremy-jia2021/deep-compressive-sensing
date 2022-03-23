@@ -1,3 +1,4 @@
+<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/headline_img.jpg" width="650" height="50"/>
 # Deep Compressed Sensing Network - Official PyTorch Implementation
 
 This repository provides the official PyTorch implementation of the following paper(DOI:10.1002/jbio.202200045):
@@ -13,7 +14,7 @@ This repository provides the official PyTorch implementation of the following pa
 
 ## SPI system schematic
 
-<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/4.jpg" width="600" height="300"/>
+<img src="https://github.com/Jeremy-jia2021/deep-compressive-sensing/blob/master/imgs/4.jpg" width="650" height="300"/>
 
 
 ## Network Architecture
