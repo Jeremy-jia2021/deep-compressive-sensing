@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/deep compressive sensing.iml" filepath="$PROJECT_DIR$/.idea/deep compressive sensing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DCS-git.iml" filepath="$PROJECT_DIR$/.idea/DCS-git.iml" />
     </modules>
   </component>
 </project>

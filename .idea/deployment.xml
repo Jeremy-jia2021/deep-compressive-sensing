@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="jeremy@172.20.234.99:22" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="jeremy@172.20.103.26:22" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
     <serverData>
+      <paths name="jeremy@172.20.103.26:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/mnt/home/jeremy/networks/DCS-git" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="jeremy@172.20.160.27:22">
         <serverdata>
           <mappings>
@@ -33,7 +40,7 @@
       <paths name="jeremy@172.20.234.99:22">
         <serverdata>
           <mappings>
-            <mapping deploy="/mnt/home/jeremy/networks/deep compressive sensing" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
